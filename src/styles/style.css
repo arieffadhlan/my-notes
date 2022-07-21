@@ -1,10 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.navbar {
+	position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: 100;
+	background-color: white;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+	margin: 0 auto;
+	padding: 0 48px;
+}
+
+.navbar-content__title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.navbar-content__add-button {
+	cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: auto;
+    height: 40px;
+	padding: 12px 20px;
+    border:none;
+    border-radius: 10px;
+	font-size: 16px;
+    background-color: #107869;
+    color: white;
+    transition:all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.navbar-content__add-button:hover { opacity: 0.9; }
+.navbar-content__add-button:active { opacity: 0.8; }
+
+.note-card-list {
+	margin: 144px 0 64px 0;
+	padding: 0 48px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 28px;
+}
+
+.note-card {
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	border-radius: 10px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.note-card__body { 
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.note-card__title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #1f2937;
+}
+
+.note-card__created-at {
+	font-size: 14px;
+	margin-top: 12px;
+	color: #7e848e;
+}
+
+.note-card__content {
+	margin: 16px 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #4b5563;
+}
+
+.note-card__separator {
+	border: none;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.note-card__action {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 24px;
+}
+
+.note-card__archive,
+.note-card__delete {
+	cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-size: 16px;
+    border:none;
+	background: none;
+    transition:all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.note-card__archive {
+	font-size: 16px;
+	font-weight: 600;
+	color: #00608d;
+}
+
+.note-card__archive:hover { opacity: 0.9; }
+.note-card__archive:active { opacity: 0.8; }
+
+.note-card__delete {
+	font-size: 16px;
+	font-weight: 600;
+	color: #fb7070;
+}
+
+.note-card__delete:hover { opacity: 0.9; }
+.note-card__delete:active { opacity: 0.8; }
+
+.note-card__btn-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 4px;
 }
