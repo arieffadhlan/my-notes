@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ArchiveButton({ id, onArchive }) {
+function ArchiveButton({ id, archived, onArchive }) {
     return (
         <button className="note-card__archive" onClick={() => onArchive(id)}>
             <svg
@@ -16,7 +16,7 @@ function ArchiveButton({ id, onArchive }) {
                     clipRule="evenodd"
                 />
             </svg>
-            Arsip
+            {archived === false ? 'Arsipkan' : 'Aktifkan'}
         </button>
     );
 }

@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px white inset;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+	font-size: 16px;
+	line-height: 24px;
+	color: #1f2937;
+	opacity: 0.7;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -24,7 +45,7 @@ body {
 
 .navbar-content {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	height: 80px;
 	margin: 0 auto;
@@ -36,7 +57,72 @@ body {
 	font-weight: bold;
 }
 
-.navbar-content__add-button {
+/* Note Input */
+.note-input {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 50%;
+	margin: 144px auto 64px auto;
+	padding: 28px;
+	border-radius: 10px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.note-input__title {
+	margin-bottom: 16px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 28px;
+	color: #1f2937;
+}
+
+.note-input__label {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 4px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	color: #1f2937;
+	opacity: 0.9;
+}
+
+.note-input__char-limit {
+	text-align: right;
+}
+
+.note-input input,
+.note-input textarea {
+	margin-bottom: 20px;
+	font-size: 16px;
+	line-height: 24px;
+	border: 1px solid rgb(194 194 194 / 75%);
+	border-radius: 12px;
+	outline: none;
+	background-color: #FFFFFF;
+	transition-property: color, background-color, border-color, box-shadow;
+	transition-duration: .2s;
+	transition-timing-function: cubic-bezier(.4,0,1,1);
+}
+
+.note-input input {
+	height: 40px;
+	padding-left: 12px;
+}
+
+.note-input textarea {
+	height: 180px;
+	padding: 12px;
+}
+
+.note-input input:focus,
+.note-input textarea:focus {
+	border: 1px solid #20573d;
+	box-shadow: 0 0 0 2.5px rgba(54, 122, 89, 0.5);
+}
+
+.note-input button {
 	cursor: pointer;
     display: flex;
     justify-content: center;
@@ -45,19 +131,48 @@ body {
     height: 40px;
 	padding: 12px 20px;
     border:none;
-    border-radius: 10px;
+	border-radius: 10px;
 	font-size: 16px;
-    background-color: #107869;
+    background-color: #43936c;
     color: white;
     transition:all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.navbar-content__add-button:hover { opacity: 0.9; }
-.navbar-content__add-button:active { opacity: 0.8; }
+.note-input button:hover { opacity: 0.9; }
+.note-input button:active { opacity: 0.8; }
 
+/* Note Card */
 .note-card-list {
-	margin: 144px 0 64px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	margin: 64px 0;
 	padding: 0 48px;
+}
+
+.note-card-list__title {
+	width: fit-content;
+	position: relative;
+	margin-bottom: 24px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 28px;
+	color: #1f2937;
+}
+
+.note-card-list__title:after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	height: 7px;
+	width: 100%;
+	border: solid 2px #43936c;
+	border-color: #43936c transparent transparent transparent;
+	border-radius: 50%;
+}
+
+.note-card-list__card {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 28px;

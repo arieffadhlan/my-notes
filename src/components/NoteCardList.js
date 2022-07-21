@@ -1,18 +1,27 @@
 import React from 'react';
-import NoteCard from './NoteCard';
+import ActiveNote from './ActiveNote';
+import ArchiveNote from './ArchiveNote';
+// import NoteCard from './NoteCard';
 
-function NoteCardList({ notes, onArchive, onDelete }) {
+function NoteCardList({ activeNotes, archiveNotes, onArchive, onDelete }) {
     return (
         <div className="note-card-list">
-            {notes.map((note) => (
-                <NoteCard
-                    key={note.id}
-                    id={note.id}
+            <div className="noted-card-list__active-note">
+                <h2 className="note-card-list__title">Catatan Aktif</h2>
+                <ActiveNote
+                    activeNotes={activeNotes}
                     onArchive={onArchive}
                     onDelete={onDelete}
-                    {...note}
                 />
-            ))}
+            </div>
+            <div className="noted-card-list__archive-note">
+                <h2 className="note-card-list__title">Arsip</h2>
+                <ArchiveNote
+                    archiveNotes={archiveNotes}
+                    onArchive={onArchive}
+                    onDelete={onDelete}
+                />
+            </div>
         </div>
     );
 }
