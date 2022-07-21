@@ -1,7 +1,6 @@
 import React from 'react';
 import ActiveNote from './ActiveNote';
 import ArchiveNote from './ArchiveNote';
-// import NoteCard from './NoteCard';
 
 function NoteCardList({ activeNotes, archiveNotes, onArchive, onDelete }) {
     return (

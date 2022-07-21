@@ -141,12 +141,43 @@ body {
 .note-input button:hover { opacity: 0.9; }
 .note-input button:active { opacity: 0.8; }
 
+/* Search Bar */
+.search-bar {
+	margin-top: 120px;
+}
+
+.search-bar__input-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-bar__input {
+	width: 50%;
+	height: 48px;
+	padding: 0 12px;
+	font-size: 16px;
+	line-height: 24px;
+	border: 1px solid rgb(194 194 194 / 75%);
+	border-radius: 12px;
+	outline: none;
+	background-color: #FFFFFF;
+	transition-property: color, background-color, border-color, box-shadow;
+	transition-duration: .2s;
+	transition-timing-function: cubic-bezier(.4,0,1,1);
+}
+
+.search-bar__input:focus {
+	border: 1px solid #20573d;
+	box-shadow: 0 0 0 2.5px rgba(54, 122, 89, 0.5);
+}
+
 /* Note Card */
 .note-card-list {
 	display: flex;
 	flex-direction: column;
 	gap: 64px;
-	margin: 64px 0;
+	margin: 36px 0 64px 0;
 	padding: 0 48px;
 }
 
