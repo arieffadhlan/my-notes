@@ -89,6 +89,9 @@ body {
 }
 
 .note-input__char-limit {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
 	text-align: right;
 }
 
@@ -153,7 +156,7 @@ body {
 }
 
 .search-bar__input {
-	width: 50%;
+	width: 75%;
 	height: 48px;
 	padding: 0 12px;
 	font-size: 16px;
@@ -225,12 +228,14 @@ body {
 
 .note-card__title {
 	font-size: 20px;
+	line-height: 28px;
 	font-weight: 700;
 	color: #1f2937;
 }
 
 .note-card__created-at {
 	font-size: 14px;
+	line-height: 22px;
 	margin-top: 12px;
 	color: #7e848e;
 }
@@ -262,26 +267,18 @@ body {
     justify-content: center;
     align-items: center;
 	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
     border:none;
 	background: none;
     transition:all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.note-card__archive {
-	font-size: 16px;
-	font-weight: 600;
-	color: #00608d;
-}
-
+.note-card__archive { color: #00608d; }
 .note-card__archive:hover { opacity: 0.9; }
 .note-card__archive:active { opacity: 0.8; }
 
-.note-card__delete {
-	font-size: 16px;
-	font-weight: 600;
-	color: #fb7070;
-}
-
+.note-card__delete { color: #fb7070; }
 .note-card__delete:hover { opacity: 0.9; }
 .note-card__delete:active { opacity: 0.8; }
 
@@ -289,4 +286,84 @@ body {
 	width: 20px;
 	height: 20px;
 	margin-right: 4px;
+}
+
+@media screen and (max-width: 1240px) {
+	.note-input {
+		max-width: 600px;
+	}
+	
+	.note-card-list__card {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 768px) {
+	::placeholder {
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	.note-input {
+		max-width: 520px;
+	}
+	
+	.note-input__title {
+		font-size: 18px;
+		line-height: 24px;
+	}
+	
+	.note-input__label {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	
+	.note-input__char-limit {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	
+	.note-input input,
+	.note-input textarea {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	
+	.note-card__title {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 700;
+		color: #1f2937;
+	}
+	
+	.note-card__created-at {
+		font-size: 12px;
+		list-style: 20px;
+	}
+	
+	.note-card__content {
+		font-size: 14px;
+		line-height: 22px;
+	}
+	
+	.note-card__archive,
+	.note-card__delete {
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.note-input {
+		max-width: 90%;
+		padding: 20px;
+	}
+	
+	.note-card-list {
+		padding: 0 20px;
+	}
+	
+	.note-card-list__card {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
